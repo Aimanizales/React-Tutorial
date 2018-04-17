@@ -7,6 +7,7 @@ It's a declarative, efficient, and flexible JavaScript library for building user
 ## Q&A To Do:
 1. Why is mandatory `super(props)` needed in constructor function?
 2. Why using `slice()`?... Not clear
+3. WTF is Immutability and why is important?
 
 ## Status reading:
-https://reactjs.org/tutorial/tutorial.html#why-immutability-is-important
+https://reactjs.org/tutorial/tutorial.html#determining-when-to-re-render-in-react
