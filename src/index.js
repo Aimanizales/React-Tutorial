@@ -2,27 +2,23 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
-class Square extends React.Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			value: null,
-		};
-	}
-	render() {
-		return (
-			<button
-				className="square"
-				onClick={() => this.setState(
-					/* Whenever this.setState is called, an update to the component is scheduled, causing React 
-					to merge in the passed state update and rerender the component along with its descendants. */
-					{value: 'X'}
-				)}
-			>
-				{this.state.value}
-			</button>
-		);
-	}
+
+/**
+ * Functional Components
+ * @param {object} props 
+ */
+function Square(props) {
+	return (
+		<button
+			className="square"
+			/* removed arrow function and (). 
+			onClick={props.onClick()} would not work because it would call 
+			props.onClick immediately instead of passing it down. */
+			onClick={props.onClick} 
+		>
+			{props.value}
+		</button>
+	);
 }
 
 class Board extends React.Component {
@@ -38,6 +34,7 @@ class Board extends React.Component {
 		/**
 		 * slice() > operator to copy the squares array prior to making changes 
 		 * and to prevent mutating the existing array
+		 * https://reactjs.org/tutorial/tutorial.html#why-immutability-is-important
 		 */
 		squares[i] = 'X';
 		this.setState({squares: squares});
