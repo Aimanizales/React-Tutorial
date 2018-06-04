@@ -3,13 +3,23 @@ import ReactDOM from 'react-dom';
 import './index.css';
 
 class Square extends React.Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			value: null,
+		};
+	}
 	render() {
 		return (
 			<button
 				className="square"
-				onClick={() => this.props.onClick()}
+				onClick={() => this.setState(
+					/* Whenever this.setState is called, an update to the component is scheduled, causing React 
+					to merge in the passed state update and rerender the component along with its descendants. */
+					{value: 'X'}
+				)}
 			>
-				{this.props.value}
+				{this.state.value}
 			</button>
 		);
 	}
