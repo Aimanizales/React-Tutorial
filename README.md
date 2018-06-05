@@ -1,14 +1,14 @@
-# TicTacToe React Game test
+# TicTacToe – React Game Tutorial
 https://reactjs.org/tutorial/tutorial.html
 
-## What is react?
-It's a declarative, efficient, and flexible JavaScript library for building user interfaces
+## What is React?
+It's a declarative, efficient, and flexible JavaScript library for building user interfaces.
 
-## Q&A To Do:
-1. Why is mandatory `super(props)` needed in constructor function?
-2. Why using `slice()`?... Not clear
-3. WTF is Immutability and why is important?
-4. Why `props` doesn't use `this` (like `this.props`) in funcional components?
+## Q&A:
+1. Why is it mandatory using `super(props)` in a constructor function?
+2. Why using `slice()`? It is not clear...
+3. WTF does _Immutability_ mean and why is it important?
+4. Why in funcional components the `props` doesn't use `this` (like `this.props`)?
 
-## Status reading:
+## Status of Reading:
 https://reactjs.org/tutorial/tutorial.html#determining-when-to-re-render-in-react
