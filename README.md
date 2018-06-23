@@ -5,7 +5,7 @@ https://reactjs.org/tutorial/tutorial.html
 It's a **declarative**, efficient, and flexible JavaScript library for building user interfaces.
 
 ---
-## RTFM!! by Orlix ¯\_(ツ)_/¯
+## RTFM!! by Orlix ¯\\_(ツ)_/¯
 - [x] React: https://www.lullabot.com/articles/how-to-learn-react
 - [ ] Redux: https://egghead.io/courses/getting-started-with-redux
 - [ ] Redux Reselect: https://github.com/reduxjs/reselect
