@@ -54,48 +54,60 @@ export class FormTutorial extends React.Component {
 				</div>
 				<form className="form-group">
 					<h3>1.2 The Form</h3>
-					<p>this.state={this.state.name}</p>
-					<p>this.isGoing={this.state.isGoing.toString()}</p>
-					<p>this.numberOfGuests={this.state.numberOfGuests}</p>
-					<label>
-						Name:
+					<div className="alert alert-info" role="alert">
+						this.state=<strong>{this.state.name}</strong><br/>
+						this.isGoing=<strong>{this.state.isGoing.toString()}</strong><br/>
+						this.numberOfGuests=<strong>{this.state.numberOfGuests}</strong><br/>
+					</div>
+					<div className="form-group row">
+						<label className="col-sm-1">
+							Name:
+						</label>
+						<div className="col-sm-3">
+							<input
+								type="text"
+								name="name"
+								placeholder="Write your Name"
+								//value={this.state.value}  // only once?
+								onChange={this.handleInputChange}
+								className="form-control form-control-sm"
+							/>
+						</div>
+					</div>
+					<div className="form-group form-check row">
+						<label className="form-check-label col-sm-1">
+							Is Going:
+						</label>
+						<div className="col-sm-3">
+							<input
+								name="isGoing"
+								type="checkbox"
+								checked={this.state.isGoing}
+								onChange={this.handleInputChange}
+								className="form-control form-control-sm"
+							/>
+						</div>
+					</div>
+					<div className="form-group row">
+						<label className="col-sm-1">
+							Number of guests:
+						</label>
+						<div className="col-sm-3">
+							<input
+								name="numberOfGuests"
+								type="number"
+								value={this.state.numberOfGuests}
+								onChange={this.handleInputChange}
+								className="form-control form-control-sm"
+							/>
+						</div>
+					</div>
+					<div className="form-group">
 						<input
-							type="text"
-							name="name"
-							placeholder="Write your Name"
-							//value={this.state.value}  // only once?
-							onChange={this.handleInputChange}
-							className="form-control"
-						/>
-					</label>
-					<br />
-					<label>
-						Is Going:
-						<input
-							name="isGoing"
-							type="checkbox"
-							checked={this.state.isGoing}
-							onChange={this.handleInputChange}
-							className="form-control"
-					/>
-					</label>
-					<br />
-					<label>
-						Number of guests:
-						<input
-							name="numberOfGuests"
-							type="number"
-							value={this.state.numberOfGuests}
-							onChange={this.handleInputChange}
-							className="form-control"
-						/>
-					</label>
-					<br />
-					<input
-						type="submit"
-						value="Submit"
-						class="btn btn-primary" />
-					<br />
+							type="submit"
+							value="Submit"
+							class="btn btn-primary btn-sm" />
+					</div>
 				</form>
 			</div>
 		);
