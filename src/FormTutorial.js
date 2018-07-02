@@ -9,8 +9,10 @@ function App() {
 	
 	return (
 		<div className="App">
-			<h3>1.1 List test</h3>
+			<h4>1.2 List test</h4>
+			<p>Conditional formatting.</p>
 			<ul>{listItems}</ul>
+			<hr/>
 		</div>
 	);
 }
@@ -47,20 +49,19 @@ export class FormTutorial extends React.Component {
 	render() {
 		return (
 			<div>
-				<App />
 				<div>
 					<h2>1. Form Tutorial</h2>
 					<p>This is the part related with the Game that appears in the <a href="https://reactjs.org/tutorial/tutorial.html" target="_blank" rel="noopener noreferrer">Tutorial</a> on React page.</p>
 				</div>
 				<form className="form-group">
-					<h3>1.2 The Form</h3>
+					<h4>1.1 The Form</h4>
 					<div className="alert alert-info" role="alert">
 						this.state=<strong>{this.state.name}</strong><br/>
 						this.isGoing=<strong>{this.state.isGoing.toString()}</strong><br/>
 						this.numberOfGuests=<strong>{this.state.numberOfGuests}</strong><br/>
 					</div>
 					<div className="form-group row">
-						<label className="col-sm-1">
+						<label className="col-sm-2">
 							Name:
 						</label>
 						<div className="col-sm-3">
@@ -74,8 +75,8 @@ export class FormTutorial extends React.Component {
 							/>
 						</div>
 					</div>
-					<div className="form-group form-check row">
-						<label className="form-check-label col-sm-1">
+					<div className="form-group row">
+						<label className="form-check-label col-sm-2">
 							Is Going:
 						</label>
 						<div className="col-sm-3">
@@ -89,7 +90,7 @@ export class FormTutorial extends React.Component {
 						</div>
 					</div>
 					<div className="form-group row">
-						<label className="col-sm-1">
+						<label className="col-sm-2">
 							Number of guests:
 						</label>
 						<div className="col-sm-3">
@@ -109,6 +110,8 @@ export class FormTutorial extends React.Component {
 							class="btn btn-primary btn-sm" />
 					</div>
 				</form>
+				<hr/>
+				<App />
 			</div>
 		);
 	}

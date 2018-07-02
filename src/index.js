@@ -10,7 +10,7 @@ const container3 = document.getElementById('root3');
 
 ReactDOM.render(<FormTutorial />, container1);
 ReactDOM.render(<Game />, container2);
+
+/* 
 ReactDOM.render(<input type="text" value="hi" />, container3);
-setTimeout(function() {
-ReactDOM.render(<input type="text" value={null} />, container3);
-}, 1000);
+setTimeout(() => ReactDOM.render(<input type="text" value={null} />, container3), 1000); */
