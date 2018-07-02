@@ -136,7 +136,10 @@ export class Game extends React.Component {
 			<div>
 				<div>
 					<h2>2. TicTacToe Game</h2>
-					<p>This is the part related with the Game that appears in the <a href="https://reactjs.org/tutorial/tutorial.html" target="_blank" rel="noopener noreferrer">Tutorial</a> on React page.</p>
+					<p>
+						<a href="https://reactjs.org/tutorial/tutorial.html" target="_blank" rel="noopener noreferrer">https://reactjs.org/tutorial/tutorial.html</a>
+					</p>
+					<hr/>
 				</div>
 				<div className="game">
 					<Board
@@ -153,7 +156,6 @@ export class Game extends React.Component {
 						</ol>
 					</div>
 				</div>
-				<hr/>
 			</div>
 		);
 	}

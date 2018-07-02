@@ -1,6 +1,6 @@
 import React from 'react';
 
-function App() {
+/* function App() {
 	const numbers = [1, 2, 3, 4, 5, 6, 7];
 	const listItems = numbers.map((number, index) => {
 	if (number === 3) return null;
@@ -10,12 +10,12 @@ function App() {
 	return (
 		<div className="App">
 			<h4>1.2 List test</h4>
+			<hr/>
 			<p>Conditional formatting.</p>
 			<ul>{listItems}</ul>
-			<hr/>
 		</div>
 	);
-}
+} */
 
 export class FormTutorial extends React.Component {
 	constructor(props) {
@@ -51,10 +51,10 @@ export class FormTutorial extends React.Component {
 			<div>
 				<div>
 					<h2>1. Form Tutorial</h2>
-					<p>This is the part related with the Game that appears in the <a href="https://reactjs.org/tutorial/tutorial.html" target="_blank" rel="noopener noreferrer">Tutorial</a> on React page.</p>
+					<p><a href="https://reactjs.org/tutorial/tutorial.html" target="_blank" rel="noopener noreferrer">reactjs.org/tutorial/tutorial.html</a></p>
+					<hr/>
 				</div>
 				<form className="form-group">
-					<h4>1.1 The Form</h4>
 					<div className="alert alert-info" role="alert">
 						this.state=<strong>{this.state.name}</strong><br/>
 						this.isGoing=<strong>{this.state.isGoing.toString()}</strong><br/>
@@ -107,11 +107,10 @@ export class FormTutorial extends React.Component {
 						<input
 							type="submit"
 							value="Submit"
-							class="btn btn-primary btn-sm" />
+							className="btn btn-primary btn-sm" />
 					</div>
 				</form>
-				<hr/>
-				<App />
+				{/* <App /> */}
 			</div>
 		);
 	}

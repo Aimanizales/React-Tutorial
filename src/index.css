@@ -1,11 +1,23 @@
 body {
 	font: 14px sans-serif;
-	margin: 20px;
 	background-color: #eee;
+	position: relative;
+	min-height: 100vh;
+	margin-top: 40px;
 }
 
 ol, ul {
 	padding-left: 30px;
+}
+
+footer {
+	padding: 50px 0;
+}
+
+section {
+	padding: 20px;
+	background-color: #fff;
+	margin-bottom: 30px;
 }
 
 .board-row:after {
