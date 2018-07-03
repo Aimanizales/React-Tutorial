@@ -2,7 +2,9 @@
 
 ## WTF is it?
 
-It's a **declarative**, efficient, and flexible JavaScript library for building user interfaces. _Declarative: ???_
+It's a **declarative**, efficient, and flexible JavaScript library for building user interfaces.
+
+What does a declarative mean? [Declarative vs imperative programming](https://codeburst.io/declarative-vs-imperative-programming-a8a7c93d9ad2)
 
 ---
 
