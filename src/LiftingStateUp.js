@@ -1,24 +1,37 @@
 import React from 'react';
 
 const scaleNames = {
-	c: 'Celcius',
-	f: 'Farenheit',
+	c: 'Celsius',
+	f: 'Fahrenheit',
 	k: 'Kelvin',
 	
 };
 
 function BoilingVerdict(props) {
-	return <p><i>The water would {props.celcius >= 100 ? '' : 'NOT'} boil.</i></p>;
+	return <p><i>The water would {props.celsius >= 100 ? '' : 'NOT'} boil.</i></p>;
 }
 
+function toCelcius(fahrenheit) {
+	return (fahrenheit - 32) * 5 / 9;
+}
+
+function toFahrenheit(celsius) {
+	return (celsius * 5 / 9) + 32 ;
+}
+
+/**
+ * It takes a string temperature and a converter function as arguments and returns a string.
+ * @param {*} temperature 
+ * @param {*} convert 
+ */
 function tryConvert(temperature, convert) {
 	const input = parseFloat(temperature);
 	if (Number.isNaN(input)) {
 		return '';
 	}
-	//const output = convert(input);
-	const rounded = Math.round(input * 1000) / 1000;
-	return rounded.toString();
+	const output = convert(input);
+	const rounded = Math.round(output * 1000) / 1000;
+	return rounded.toString() + 'º';
 }
 
 class TemperatureInput extends React.Component {
@@ -31,28 +44,26 @@ class TemperatureInput extends React.Component {
 	}
 
 	handleChange(e) {
-		this.setState({
-			temperature: tryConvert(e.target.value)
-		});
+		this.props.onTemperatureChange(e.target.value);
 	}
 
 	render() {
-		const temperature = this.state.temperature;
+		const temperature = this.props.temperature;
 		const scale = this.props.scale;
 	
 		return (
 			<form className="form-group">
 				<fieldset className="row">
-					<label className="col-sm-3 text-right">Enter temperature in {scaleNames[scale]}:</label>
-					<div className="col-sm-2">
+					<label className="col-sm-4 text-right">Enter temperature in {scaleNames[scale]}:</label>
+					<div className="col-sm-8">
 						<input
 							type="text"
 							value={temperature}
 							onChange={this.handleChange}
 							className="form-control"
+							placeholder={scale}
 						/>
 					</div>
-					<div className="col-sm-7">º <BoilingVerdict celcius={parseFloat(temperature)} /></div>
 				</fieldset>
 			</form>
 		);
@@ -60,12 +71,49 @@ class TemperatureInput extends React.Component {
 }
 
 class Calculator extends React.Component {
+	constructor(props) {
+		super(props);
+		this.handleCelsiusChange = this.handleCelsiusChange.bind(this);
+		this.handleFahrenheitChange = this.handleFahrenheitChange.bind(this);
+		this.state = {
+			scale: 'c',
+			temperature: ''
+		}
+	}
+
+	handleCelsiusChange(temperature) {
+		this.setState({
+			scale: 'c',
+			temperature: temperature
+		})
+	}
+
+	handleFahrenheitChange(temperature) {
+		this.setState({
+			scale: 'f',
+			temperature: temperature
+		})
+	}
+
 	render() {
+		const scale = this.state.scale;
+		const temperature = this.state.temperature;
+		const celcius = scale === 'f' ? tryConvert(temperature, toCelcius) : temperature;
+		const fahrenheit = scale === 'c' ? tryConvert(temperature, toFahrenheit) : temperature;
+
 		return (
 			<div>
-				<TemperatureInput scale="c"/>
-				{/* <TemperatureInput scale="f"/> */}
-				{/* <TemperatureInput scale="k"/> */}
+				<TemperatureInput
+					scale="c"
+					temperature={celcius}
+					onTemperatureChange={this.handleCelsiusChange}
+				/>
+				<TemperatureInput
+					scale="f"
+					temperature={fahrenheit}
+					onTemperatureChange={this.handleFahrenheitChange}
+				/>
+				<BoilingVerdict celcius={parseFloat(celcius)} />
 			</div>
 		);
 	}
@@ -82,6 +130,7 @@ class LiftingStateUp extends React.Component {
 					</p>
 					<p>
 						<strong>Reflecting the same changing data in several components</strong>. A temperature calculator that calculates whether the water would boil at a given temperature.
+						sharing state is accomplished by moving it up to the closest common ancestor of the components that need it. This is called “lifting state up”.
 					</p>
 					<hr/>
 				</div>

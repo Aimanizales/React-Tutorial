@@ -50,8 +50,8 @@ export class FormTutorial extends React.Component {
 		return (
 			<div>
 				<div>
-					<h2>1. Form Tutorial</h2>
-					<p><a href="https://reactjs.org/tutorial/tutorial.html" target="_blank" rel="noopener noreferrer">reactjs.org/tutorial/tutorial.html</a></p>
+					<h3>1. Form Tutorial</h3>
+					<p><a href="https://reactjs.org/tutorial/tutorial.html" target="_blank" rel="noopener noreferrer">https://reactjs.org/tutorial/tutorial.html</a></p>
 					<hr/>
 				</div>
 				<form className="form-group">
