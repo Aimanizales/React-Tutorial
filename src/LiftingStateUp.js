@@ -19,11 +19,6 @@ function toFahrenheit(celsius) {
 	return (celsius * 5 / 9) + 32 ;
 }
 
-/**
- * It takes a string temperature and a converter function as arguments and returns a string.
- * @param {*} temperature 
- * @param {*} convert 
- */
 function tryConvert(temperature, convert) {
 	const input = parseFloat(temperature);
 	if (Number.isNaN(input)) {
@@ -37,13 +32,11 @@ function tryConvert(temperature, convert) {
 class TemperatureInput extends React.Component {
 	constructor(props) {
 		super(props);
-		this.state = {
-			temperature: ''
-		};
 		this.handleChange = this.handleChange.bind(this);
 	}
 
 	handleChange(e) {
+		console.log(this.props.onTemperatureChange);
 		this.props.onTemperatureChange(e.target.value);
 	}
 
@@ -54,14 +47,14 @@ class TemperatureInput extends React.Component {
 		return (
 			<form className="form-group">
 				<fieldset className="row">
-					<label className="col-sm-4 text-right">Enter temperature in {scaleNames[scale]}:</label>
+					<label className="col-sm-4 text-right">º{scaleNames[scale]}:</label>
 					<div className="col-sm-8">
 						<input
 							type="text"
 							value={temperature}
 							onChange={this.handleChange}
 							className="form-control"
-							placeholder={scale}
+							placeholder="Enter temperature"
 						/>
 					</div>
 				</fieldset>
@@ -76,7 +69,7 @@ class Calculator extends React.Component {
 		this.handleCelsiusChange = this.handleCelsiusChange.bind(this);
 		this.handleFahrenheitChange = this.handleFahrenheitChange.bind(this);
 		this.state = {
-			scale: 'c',
+			scale: '',
 			temperature: ''
 		}
 	}
