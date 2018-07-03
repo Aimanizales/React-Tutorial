@@ -35,7 +35,7 @@ It's a **declarative**, efficient, and flexible JavaScript library for building 
 - [x] 7. Conditional Rendering
 - [x] 8. Lists and Keys
 - [x] 9. Forms
-- [ ] 10. Lifting State Up
+- [x] 10. Lifting State Up
 - [ ] 11. Composition vs Inheritance
 - [ ] 12. Thinking In React
 
