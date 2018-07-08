@@ -93,6 +93,7 @@ class Calculator extends React.Component {
 		const temperature = this.state.temperature;
 		const celcius = scale === 'f' ? tryConvert(temperature, toCelcius) : temperature;
 		const fahrenheit = scale === 'c' ? tryConvert(temperature, toFahrenheit) : temperature;
+		//const children = this.props.children;
 
 		return (
 			<div>
@@ -107,6 +108,7 @@ class Calculator extends React.Component {
 					onTemperatureChange={this.handleFahrenheitChange}
 				/>
 				<BoilingVerdict celcius={parseFloat(celcius)} />
+				{this.props.children}
 			</div>
 		);
 	}
@@ -128,7 +130,9 @@ class LiftingStateUp extends React.Component {
 					<hr/>
 				</div>
 				<div>
-					<Calculator />
+					<Calculator>
+						This is the props children sent.
+					</Calculator>
 				</div>
 			</div>
 		)

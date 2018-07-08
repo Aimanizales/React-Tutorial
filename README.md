@@ -38,7 +38,7 @@ What does a declarative mean? [Declarative vs imperative programming](https://co
 - [x] 8. Lists and Keys
 - [x] 9. Forms
 - [x] 10. Lifting State Up
-- [ ] 11. Composition vs Inheritance
+- [x] 11. Composition vs Inheritance
 - [ ] 12. Thinking In React
 
 ### Advanced Guides
