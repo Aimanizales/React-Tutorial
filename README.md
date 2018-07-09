@@ -1,10 +1,14 @@
 # React
 
-## WTF is it?
+Testing basics in my [https://codesandbox.io/u/Aimanizales](https://codesandbox.io/u/Aimanizales) before moving here.
+
+## WTF is React?
 
 It's a **declarative**, efficient, and flexible JavaScript library for building user interfaces.
 
-What does a declarative mean? [Declarative vs imperative programming](https://codeburst.io/declarative-vs-imperative-programming-a8a7c93d9ad2)
+### Core Concepts
+
+- [Declarative vs imperative programming](https://codeburst.io/declarative-vs-imperative-programming-a8a7c93d9ad2)
 
 ---
 
@@ -19,7 +23,7 @@ What does a declarative mean? [Declarative vs imperative programming](https://co
 
 ### 1. How to Learn React: A Five-Step Plan ([link](https://www.lullabot.com/articles/how-to-learn-react))
 
-- [x] a. [React Documentation](https://facebook.github.io/react/docs/installation.html). Testing basics in my [Code Sandbox](https://codesandbox.io/s/z6mm45q8nx).
+- [x] a. [React Documentation](https://facebook.github.io/react/docs/installation.html).
 - [ ] b. [React Fundamentals](https://reacttraining.com/online/react-fundamentals).
 
 ---
