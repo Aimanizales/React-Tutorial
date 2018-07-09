@@ -83,20 +83,10 @@ class ProductTable extends React.Component {
 }
 
 class SearchBar extends React.Component {
-	constructor(props) {
-		super(props);
-		this.handleFilterTextChange = this.handleFilterTextChange.bind(this);
-		this.handleInStockChange = this.handleInStockChange.bind(this);
-	}
-
-	handleFilterTextChange(e){
-		this.props.onFilterTextChange(e.target.value);
-	};
+	// Why is the constructor useless in this case?
 	
-	handleInStockChange(e){
-		this.props.onInStockChange(e.target.checked);
-	};
-
+	handleFilterTextChange = e => this.props.onFilterTextChange(e.target.value);
+	handleInStockChange = e => this.props.onInStockChange(e.target.checked);
 
 	render() {
 		const filterText = this.props.filterText;
@@ -141,17 +131,15 @@ class FilterableProductTable extends React.Component {
 			filterText: '',
 			inStockOnly: false
 		};
-		this.handleFilterTextChange = this.handleFilterTextChange.bind(this);
-		this.handleInStockChange = this.handleInStockChange.bind(this);
 	}
 
-	handleFilterTextChange(filterText) {
+	handleFilterTextChange = filterText => {
 		this.setState({
 			filterText: filterText
 		});
 	}
 
-	handleInStockChange(inStockOnly) {
+	handleInStockChange = inStockOnly => {
 		this.setState({
 			inStockOnly: inStockOnly
 		})
@@ -159,19 +147,19 @@ class FilterableProductTable extends React.Component {
 
 	render() {
 		return (
-		<div className="container">
-			<SearchBar
-				filterText={this.state.filterText}
-				inStockOnly={this.state.inStockOnly}
-				onFilterTextChange={this.handleFilterTextChange}
-				onInStockChange={this.handleInStockChange}
-			/>
-			<ProductTable
-				products={this.props.products}
-				filterText={this.state.filterText}
-				inStockOnly={this.state.inStockOnly}
-			/>
-		</div>
+			<div className="container">
+				<SearchBar
+					filterText={this.state.filterText}
+					inStockOnly={this.state.inStockOnly}
+					onFilterTextChange={this.handleFilterTextChange}
+					onInStockChange={this.handleInStockChange}
+				/>
+				<ProductTable
+					products={this.props.products}
+					filterText={this.state.filterText}
+					inStockOnly={this.state.inStockOnly}
+				/>
+			</div>
 		);
 	}
 }
